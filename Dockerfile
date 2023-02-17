@@ -1,8 +1,8 @@
-FROM ubuntu:latest
+FROM --platform=linux/amd64 ubuntu:latest
 
 RUN adduser --gecos "*" --disabled-password devuser && \
     apt-get update && \
-    apt-get -y install zsh vim zip curl sudo git 
+    apt-get -y install zsh vim zip curl sudo git groff 
 
 RUN adduser devuser sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
