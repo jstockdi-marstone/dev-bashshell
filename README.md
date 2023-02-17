@@ -12,5 +12,5 @@ docker volume create home_dir
 
 Then run:
 ```
-docker run -v home_dir:/home/devuser  -v /Users/jonstockdill/Development:/Development   -it devenv-baseshell:latest /bin/zsh
+docker run -v home_dir:/home  -v /path/to/Development:/Development   -it devenv-baseshell:latest /bin/zsh
 ```
