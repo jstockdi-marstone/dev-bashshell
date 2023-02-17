@@ -1,10 +1,13 @@
 FROM --platform=linux/amd64 ubuntu:latest
 
-RUN adduser --gecos "*" --disabled-password devuser && \
+
+RUN adduser --gecos "*" --disabled-password devuser  && \
+    adduser --gecos "*" --disabled-password produser && \
     apt-get update && \
     apt-get -y install zsh vim zip curl sudo git groff 
 
 RUN adduser devuser sudo
+RUN adduser produser sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN apt-get -y install python3
