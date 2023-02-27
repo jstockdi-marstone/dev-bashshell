@@ -23,6 +23,11 @@ RUN sh -c "$(curl -L https://github.com/deluan/zsh-in-docker/releases/download/v
     -p https://github.com/zsh-users/zsh-autosuggestions \
     -p https://github.com/zsh-users/zsh-completions
 
+
+RUN curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+
+
+
 USER devuser
 WORKDIR /home/devuser
 
